@@ -8,18 +8,25 @@ public class Principal {
 	public static void main(String[] args) {
 		String menu;
 		do {
-			menu = JOptionPane.showInputDialog("1 - Criar sequência\n" + "2 - Adicionar valor\n" + "3 - Imprimir");
+			menu = JOptionPane.showInputDialog(
+					"1 - Criar sequência\n" +
+					"2 - Adicionar valor\n" +
+					"3 - Imprimir"
+			);
 			if (menu != null) {
 				switch (menu) {
-				case "1":
-					criar();
-					break;
-				case "2":
-					add();
-					break;
-				case "3":
-					imprimir();
-					break;
+					case "1": {
+						criar();
+						break;
+					}
+					case "2": {
+						add();
+						break;
+					}
+					case "3": {
+						imprimir();
+						break;
+					}
 				}
 			}
 		} while (menu != null);
@@ -49,6 +56,12 @@ public class Principal {
 		 */
 	}
 
-public static void imprimir(){
-/* se o objeto sequencia não existir, então deverá exibir uma mensagem para o usuário */
+	public static void imprimir() {
+		/* se o objeto sequencia não existir, então deverá exibir uma mensagem para o usuário */
+		if (sequencia != null) {
+			sequencia.imprimir();
+		}else{
+			JOptionPane.showMessageDialog(null,"Primeiro é necessário criar	a sequência usando a opção 1");
+		}
+	}
 }
